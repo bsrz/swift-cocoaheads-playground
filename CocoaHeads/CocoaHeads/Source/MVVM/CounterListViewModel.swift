@@ -51,7 +51,7 @@ struct CounterListViewModelView: View {
         }
         .buttonStyle(.plain)
         .font(.largeTitle)
-        .navigationTitle("Counter List")
+        .navigationTitle("MVVM Counter List")
         .toolbar {
             ToolbarItem {
                 Button {
