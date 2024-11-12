@@ -4,10 +4,12 @@ import SwiftUI
 @Observable
 class CounterViewModel {
 
-    struct State: Equatable {
+    struct State: Equatable, Identifiable {
+        var id = UUID()
         var count: Int = 0
     }
 
+    var id: UUID { state.id }
     private(set) var state = State()
 
     enum Action {
@@ -28,7 +30,7 @@ class CounterViewModel {
 
 struct CounterViewModelView: View {
 
-    @State var viewModel = CounterViewModel()
+    let viewModel: CounterViewModel
 
     var body: some View {
         VStack {
@@ -38,10 +40,11 @@ struct CounterViewModelView: View {
                 Button("+") { viewModel.send(.increment) }
             }
         }
+        .font(.largeTitle)
     }
 }
 
 #Preview {
-    CounterViewModelView()
+    CounterViewModelView(viewModel: CounterViewModel())
 }
 

@@ -1,17 +1,28 @@
+import Observation
 import SwiftUI
 
+@Observable
+class AppViewModel {
+
+    struct State {
+        var counterList: CounterListViewModel
+    }
+
+    private(set) var state = State(counterList: CounterListViewModel())
+}
+
 struct AppView: View {
+
+    let viewModel: AppViewModel
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            CounterListViewModelView(viewModel: viewModel.state.counterList)
         }
-        .padding()
+        .font(.largeTitle)
     }
 }
 
 #Preview {
-    AppView()
+    AppView(viewModel: AppViewModel())
 }
