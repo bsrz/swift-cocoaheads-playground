@@ -1,0 +1,30 @@
+{
+  "configurations" : [
+    {
+      "id" : "B74B2485-4B4A-4D5A-A5B3-B0027670A902",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:CocoaHeads.xcodeproj",
+      "identifier" : "D11484322CE3BC7F00682982",
+      "name" : "CocoaHeads"
+    },
+    "testExecutionOrdering" : "random"
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:CocoaHeads.xcodeproj",
+        "identifier" : "D11484422CE3BC8100682982",
+        "name" : "CocoaHeadsTests"
+      }
+    }
+  ],
+  "version" : 1
+}
