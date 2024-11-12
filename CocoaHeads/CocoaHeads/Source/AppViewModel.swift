@@ -11,7 +11,7 @@ class AppViewModel {
     private(set) var state = State(counterList: CounterListViewModel())
 }
 
-struct AppView: View {
+struct AppViewModelView: View {
 
     let viewModel: AppViewModel
 
@@ -24,5 +24,5 @@ struct AppView: View {
 }
 
 #Preview {
-    AppView(viewModel: AppViewModel())
+    AppViewModelView(viewModel: AppViewModel())
 }
