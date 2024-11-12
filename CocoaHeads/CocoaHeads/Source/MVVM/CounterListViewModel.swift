@@ -8,7 +8,11 @@ class CounterListViewModel {
         var counters: [CounterViewModel] = []
     }
 
-    private(set) var state = State()
+    private(set) var state: State
+
+    init(state: State = State()) {
+        self.state = state
+    }
 
     enum Action {
         case add

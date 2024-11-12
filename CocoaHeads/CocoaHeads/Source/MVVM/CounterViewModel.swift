@@ -10,7 +10,11 @@ class CounterViewModel {
     }
 
     var id: UUID { state.id }
-    private(set) var state = State()
+    private(set) var state: State
+
+    init(state: State = State()) {
+        self.state = state
+    }
 
     enum Action {
         case decrement
